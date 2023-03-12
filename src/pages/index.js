@@ -27,7 +27,7 @@ export default function Home({ title, data }) {
         <h2>{title}</h2>
 
         {data.map((el) => (
-          <a href={`/events/${el.id}`}>
+          <a key={el.id} href={`/events/${el.id}`}>
             <Image alt="location" width={500} height={300} src={el.image} />
             {/* <img alt="location" src={el.image} /> */}
             <h2>{el.title}</h2>
@@ -45,7 +45,6 @@ export default function Home({ title, data }) {
 
 export async function getServerSideProps() {
   const { events_categories } = await import("/data/data.json");
-  console.log(events_categories);
   return {
     props: {
       title: "How You Doing",

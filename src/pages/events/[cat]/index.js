@@ -1,6 +1,6 @@
 import React from "react";
 
-const Index = () => {
+const EventsPerCityPage = () => {
   return (
     <div>
       <h1>Events in London</h1>
@@ -11,4 +11,4 @@ const Index = () => {
   );
 };
 
-export default Index;
+export default EventsPerCityPage;

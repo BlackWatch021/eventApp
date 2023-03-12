@@ -1,6 +1,6 @@
 import React from "react";
 
-const Index = () => {
+const EventsPage = () => {
   return (
     <div>
       <h1>Events Page</h1>
@@ -22,4 +22,4 @@ const Index = () => {
   );
 };
 
-export default Index;
+export default EventsPage;

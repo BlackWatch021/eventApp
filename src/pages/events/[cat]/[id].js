@@ -1,14 +1,9 @@
 import React from "react";
 import Image from "next/image";
+import SingleEvent from "@/components/events/singleEvent";
 
 const Id = ({ data }) => {
-  return (
-    <div>
-      <Image width="1000" height="500" src={data.image} alt={data.title} />
-      <h2>{data.title}</h2>
-      <p>{data.description}</p>
-    </div>
-  );
+  return <SingleEvent data={data} />;
 };
 
 export default Id;

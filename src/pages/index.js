@@ -4,7 +4,7 @@ import HomePage from "@/components/home/home-page";
 
 const inter = Inter({ subsets: ["latin"] });
 
-export default function Home({ title, data }) {
+export default function Home({ data }) {
   return (
     <>
       <Head>
@@ -14,7 +14,7 @@ export default function Home({ title, data }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <HomePage data={data} title={title} />
+      <HomePage data={data} />
     </>
   );
 }
@@ -23,7 +23,6 @@ export async function getServerSideProps() {
   const { events_categories } = await import("/data/data.json");
   return {
     props: {
-      title: "How You Doing",
       data: events_categories,
     },
   };

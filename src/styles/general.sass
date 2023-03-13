@@ -1,0 +1,170 @@
+ul
+  list-style: none
+
+header
+  height: 300px
+  background: linear-gradient(180deg, #72c4ff, black)
+  padding: 20px 30px
+  padding-bottom: 50px
+  display: flex
+  flex-direction: column
+  justify-content: space-between
+
+  >div
+    width: 100%
+    max-width: 1250px
+    margin: auto
+    display: flex
+    flex-direction: column
+    justify-content: space-between
+    align-items: center
+    flex-direction: row
+    margin: 0 auto
+  .title
+    width: 50%
+    font-size: 40px
+    text-transform: uppercase
+  .topNav
+    margin: 0px
+    ul
+      display: flex
+      text-decoration: none
+      list-style: none
+      gap: 15px
+      li
+        font-weight: 600
+        font-size: 16px
+
+footer
+  background-color: #333
+  color: #fff
+  padding: 30px
+  text-align: center
+  background: linear-gradient(360deg, #72c4ff, black)
+
+main
+  width: 100%
+  max-width: 1250px
+  margin: auto
+  padding: 80px 30px
+  min-height: 550px
+
+.home_body
+  display: flex
+  flex-direction: column
+  gap: 50px
+  .image
+    width: 50%
+  .card
+    display: flex
+    flex-direction: row
+    gap:30px
+    justify-content: center
+    align-items: center
+    &:nth-child(even)
+      // direction: rtl
+      flex-direction: row-reverse
+      .content
+        text-align: right
+    .content
+      width: 50%
+      h2
+        margin-bottom: 20px
+
+
+  
+#aboutUs
+  h1,h2,h3
+    margin-bottom: 10px
+  p
+    margin-bottom: 20px
+    font-size: 10pt
+  .about_us_list
+    display: flex
+    flex-direction: column
+    margin-left: 50px
+    margin-top: 30px
+     
+  
+
+
+  
+.events_page
+  display: flex
+  flex-direction: row
+  gap: 40px
+  flex-wrap: wrap
+  .card
+    position: relative
+    border-radius: 10px
+    transition: all .2s linear
+    :hover,:hover>img,:hover>h2
+     transform: scale(1.05)
+    img
+     border-radius: 10px
+     transition: all .2s linear    
+    h2
+      position: absolute
+      width: 100%
+      top: 65%
+      text-align: center
+      font-size: 38px
+      color: white
+      text-transform: uppercase
+      text-shadow: 1px 1px 20px black
+      transition: all .2s linear
+
+.cat_events
+  width: 100%
+
+  h1
+    margin-bottom: 50px
+  .content
+    display: flex
+    flex-direction: row
+    flex-wrap: wrap
+    gap: 30px
+    row-gap: 70px
+    width: 100%
+    justify-content: flex-start
+    .card
+      display: flex
+      flex-direction: column
+      width: 30%
+      h2
+        margin: 30px 0 10px 0px
+
+      p
+        font-size: 10pt  
+
+.event_single_page
+  .email_registration
+    margin-top: 25px
+    label
+      display: flex
+      margin-bottom: 15px
+      font-size: 18px
+      font-weight: 800
+      text-transform: uppercase
+      margin-top: 25px
+    input
+      height: 40px
+      min-width: 350px
+      box-shadow: none
+      border-radius: 5px
+      border: 1px solid #ccc
+      font-size: 16px
+    button
+      border-radius: 5px
+      height: 40px
+      min-width: 150px
+      border: 1px solid #5f5a5a
+      font-size: 16px
+      text-transform: uppercase
+      margin-left: 10px
+      font-weight: 600
+      background: #dcfff3
+      cursor: pointer
+      &:hover
+        color: #dcfff3
+        background: #333

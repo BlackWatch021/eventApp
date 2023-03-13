@@ -1,20 +1,10 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
+import CatEvent from "@/components/events/catEvent";
 
 const EventsPerCityPage = ({ data, city }) => {
-  return (
-    <div>
-      <h1>Events is {city}</h1>
-      {data.map((el) => (
-        <Link key={el.id} href={`/events/${el.city}/${el.id}`} passHref>
-          <Image width="300" height="300" src={el.image} />
-          <h2>{el.title}</h2>
-          <p>{el.description}</p>
-        </Link>
-      ))}
-    </div>
-  );
+  return <CatEvent data={data} city={city} />;
 };
 
 export default EventsPerCityPage;

@@ -28,6 +28,13 @@ export default function handler(req, res) {
   if (method === "POST") {
     const { email, id } = req.body;
 
+    const validRegex =
+      /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+
+    if (!email.match(validRegex)) {
+      res.status(422).json({ message: "Invalid email address" });
+    }
+
     const newAllEvents = allEvents.map((el) => {
       if (el.id === id) {
         if (el.emails_registered.includes(email)) {

@@ -1,15 +1,23 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import Image from "next/image";
 import { useRouter } from "next/router";
 
 const SingleEvent = ({ data }) => {
   const inputEmail = useRef("");
   const router = useRouter();
+  const [message, setMessage] = useState("");
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     const email = inputEmail.current.value;
     const id = router?.query.id;
+
+    const validRegex =
+      /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+
+    if (!email.match(validRegex)) {
+      setMessage("Please introduce a correct email address");
+    }
 
     try {
       // POST req
@@ -24,7 +32,8 @@ const SingleEvent = ({ data }) => {
       });
 
       const data = await response.json();
-
+      setMessage(data.message);
+      inputEmail.current.value = "";
       console.log("data", data);
     } catch (err) {
       console.error("Error", err);
@@ -47,6 +56,7 @@ const SingleEvent = ({ data }) => {
         />
         <button type="submit">Submit</button>
       </form>
+      <p>{message}</p>
     </div>
   );
 };

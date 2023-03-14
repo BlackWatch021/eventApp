@@ -121,12 +121,7 @@
       "city": "barcelona",
       "description": "Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscisfa.",
       "image": "https://images.unsplash.com/photo-1587407627257-27b7127c868c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80",
-      "emails_registered": [
-        "alicia@gmail.com",
-        "monica@gmail.com",
-        "david@yahoo.com",
-        "claire@ss.com"
-      ]
+      "emails_registered": ["guy@gmail.com"]
     },
     {
       "id": "international-conference-on-industrial-design",

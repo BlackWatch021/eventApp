@@ -1,10 +1,34 @@
-import React from "react";
+import React, { useRef } from "react";
 import Image from "next/image";
+import { useRouter } from "next/router";
 
 const SingleEvent = ({ data }) => {
-  const handleSubmit = (e) => {
+  const inputEmail = useRef("");
+  const router = useRouter();
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("submit");
+    const email = inputEmail.current.value;
+    const id = router?.query.id;
+
+    try {
+      // POST req
+      //body=email + id
+
+      const response = await fetch("/api/email-registration", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ email, id }),
+      });
+
+      const data = await response.json();
+
+      console.log("data", data);
+    } catch (err) {
+      console.error("Error", err);
+    }
   };
 
   return (
@@ -15,7 +39,12 @@ const SingleEvent = ({ data }) => {
       <form onSubmit={handleSubmit} className="email_registration">
         <label>Register for the event</label>
         <br />
-        <input type="email" id="email" placeholder="example@gmail.com" />
+        <input
+          ref={inputEmail}
+          type="email"
+          id="email"
+          placeholder="example@gmail.com"
+        />
         <button type="submit">Submit</button>
       </form>
     </div>
